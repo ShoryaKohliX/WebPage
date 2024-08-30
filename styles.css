@@ -1,0 +1,247 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5fffa;
+    color: #333; 
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto; 
+}
+
+/* Header and Navbar */
+header {
+    background-color: skyblue; /* Set navbar background color to peachpuff */
+    color: yellow; /* Change text color for better contrast */
+    padding: 1rem 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.navbar-logo a {
+    color: #333; /* Adjust text color to match the new background */
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.navbar-questions {
+    color: darkblue;
+    font-size: 1rem;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.navbar-toggle {
+    display: none;
+}
+
+/* Main Content */
+main {
+    padding: 2rem 0;
+}
+
+.section-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center; /* Center the content */
+}
+
+.collapsible-box {
+    flex: 1 1 300px; /* Adjust size for responsiveness */
+    max-width: 100%;
+    margin: 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.collapsible-header {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+
+.collapsible-content {
+    display: none;
+    padding: 1rem;
+}
+
+.collapsible-content ul {
+    padding-left: 20px;
+}
+
+.collapsible-content dl {
+    padding-left: 20px;
+}
+
+.collapsible-content dt {
+    font-weight: bold;
+}
+
+.collapsible-content dd {
+    margin: 0 0 10px 0;
+}
+
+/* Popup Box */
+.popup-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.popup-box .popup-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.popup-box .popup-close {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+}
+
+.popup-box .popup-content {
+    font-size: 1rem;
+}
+
+/* Dimmed Background */
+.dimmed-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-toggle {
+        display: block;
+        cursor: pointer;
+        background-color: #333;
+        padding: 0.5rem;
+        border-radius: 5px;
+    }
+
+    .section-container {
+        flex-direction: column;
+    }
+
+    .collapsible-box {
+        max-width: 100%;
+    }
+}
+/* Container for the typing effect */
+.navbar-questions {
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for a typing effect */
+    font-size: 1.2rem; /* Adjust as needed */
+    color: #333; /* Text color */
+    border-right: 2px solid #333; /* Cursor effect */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    animation: blink 1s step-end infinite; /* Blinking cursor animation */
+    display: inline-block; /* Align with other content */
+    padding: 0 5px; /* Adjust padding to fit the cursor */
+}
+
+/* Cursor blinking effect */
+@keyframes blink {
+    50% {
+        border-color: transparent; /* Hide cursor halfway through */
+    }
+}
+
+/* Adjustments for the popup box to center it */
+.popup-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px; /* Adjust max width as needed */
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+    display: none; /* Initially hidden */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+.popup-header {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.popup-content {
+    font-size: 1rem;
+}
+
+.dimmed-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* Initially hidden */
+    z-index: 999;
+}
+
+/* Close button styling */
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #333;
+}
+
